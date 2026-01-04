@@ -80,17 +80,28 @@ git clone https://github.com/AnushkaChanda/SansadGPT.git
 cd SansadGPT
 ```
 
-**### Step 2: Create a Virtual Environment**
+### Step 2: Create a Virtual Environment
+```bash
 python -m venv venv
+```
 
-**### Step 3: Activate the Virtual Environment**(On Windows)
+### Step 3: Activate the Virtual Environment(On Windows)
+```bash
 Step 3: Activate the Virtual Environment
+```
 
-**### Step 4: Install Required Dependencies**
+### Step 4: Install Required Dependencies
+```bash
 pip install -r requirements.txt
+```
 
-**### Step 5: Run the Streamlit Application**
+### Step 5: Run the Streamlit Application
+```bash
 streamlit run app.py
+```
 
-**### Step 6: Open the Application**
+### Step 6: Open the Application
+Once the app starts, open the following URL in your browser:
+```arduino
 http://localhost:8501
+```
