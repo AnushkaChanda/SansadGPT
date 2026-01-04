@@ -78,6 +78,7 @@ This design choice follows **responsible AI and research integrity principles**.
 ```bash
 git clone https://github.com/AnushkaChanda/SansadGPT.git
 cd SansadGPT
+```
 
 **### Step 2: Create a Virtual Environment**
 python -m venv venv
