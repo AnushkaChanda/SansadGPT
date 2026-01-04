@@ -38,13 +38,13 @@ while clearly indicating the **source of every answer**.
 
 | Layer | Technology |
 |------|-----------|
-| Language | **Python 3.11** |
-| LLM | **FLAN-T5 (HuggingFace)** |
-| Retrieval | **FAISS** |
+| Language | Python 3.11 |
+| LLM | FLAN-T5 (HuggingFace) |
+| Retrieval | FAISS |
 | Embeddings | Sentence-Transformers |
-| Framework | **LangChain** |
+| Framework | LangChain |
 | Web Search | DuckDuckGo (`ddgs`) |
-| Interface | **Streamlit** |
+| Interface | Streamlit |
 
 ---
 
