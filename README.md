@@ -1,122 +1,69 @@
-\# 🏛️ SansadGPT
+<div align="center">
 
+# 🏛️ **SansadGPT**
+### *Indian Parliament Question–Answer Chatbot*
 
+A **Retrieval-Augmented Generation (RAG)** system for answering questions from  
+**Lok Sabha & Rajya Sabha parliamentary records**, with intelligent web fallback.
 
-SansadGPT is a Retrieval-Augmented Generation (RAG) chatbot designed to answer
-
-questions based on Indian Parliamentary records (Lok Sabha \& Rajya Sabha).
-
-The system uses semantic search over parliamentary documents and automatically
-
-falls back to web search for recent or time-sensitive queries.
-
-
+</div>
 
 ---
 
+## 📖 Overview
 
+**SansadGPT** is an AI-powered chatbot that enables users to ask natural-language questions about Indian Parliamentary proceedings.
 
-\## 🔹 Key Features
-
-
-
-\- 📄 Answers questions from Lok Sabha and Rajya Sabha records
-
-\- 🔍 FAISS-based semantic retrieval over parliamentary PDFs
-
-\- 🌐 Automatic web-search fallback for current information
-
-\- 🧠 Open-source LLM (FLAN-T5) via HuggingFace
-
-\- 🖥️ Interactive Streamlit interface
-
-\- ✅ Responsible AI behavior (does not hallucinate when data is unavailable)
-
-
+It performs **semantic search over official parliamentary documents** and, when required, **automatically switches to web search** for recent or time-sensitive queries — always showing **where the answer comes from**.
 
 ---
 
+## ✨ Key Features
 
+- 🏛️ **Parliamentary QA**  
+  Answers questions using Lok Sabha & Rajya Sabha records
 
-\## 🧩 Tech Stack
+- 🔍 **Semantic Retrieval**  
+  FAISS-powered vector search over parliamentary PDFs
 
+- 🌐 **Web Fallback**  
+  Automatically searches the internet for current or missing information
 
+- 🧠 **Open-Source LLM**  
+  Uses **FLAN-T5** via HuggingFace (no closed APIs)
 
-\- \*\*Python 3.11\*\*
+- 🖥️ **Interactive UI**  
+  Clean Streamlit-based question–answer interface
 
-\- \*\*LangChain\*\*
-
-\- \*\*FAISS\*\*
-
-\- \*\*HuggingFace Transformers\*\*
-
-\- \*\*Sentence-Transformers\*\*
-
-\- \*\*Streamlit\*\*
-
-\- \*\*DuckDuckGo Search (ddgs)\*\*
-
-
-
----
-
-
-
-\## ⚙️ How It Works
-
-
-
-1\. User submits a query through the Streamlit UI
-
-2\. The system checks if the query is time-sensitive
-
-3\. If time-sensitive → performs web search
-
-4\. Otherwise → retrieves relevant parliamentary records using FAISS
-
-5\. The LLM generates a grounded answer based on retrieved context
-
-6\. The source of the answer (Web or Parliamentary Records) is shown explicitly
-
-
+- ✅ **Responsible AI**  
+  Clearly states when no substantive information is available  
+  *(no hallucinated answers)*
 
 ---
 
+## 🧩 Tech Stack
 
-
-\## 📌 Important Note on Parliamentary Data
-
-
-
-Many Rajya Sabha and Lok Sabha records (especially \*Unstarred Questions\*)
-
-are administrative or tabular in nature and do not contain debate-style
-
-discussion or narrative explanations.
-
-
-
-In such cases, SansadGPT \*\*explicitly informs the user\*\* that no substantive
-
-discussion is available instead of generating speculative or fabricated answers.
-
-This behavior is intentional and aligns with responsible AI principles.
-
-
+| Layer | Technology |
+|-----|-----------|
+| Language | **Python 3.11** |
+| LLM | **FLAN-T5 (HuggingFace)** |
+| Retrieval | **FAISS** |
+| Embeddings | Sentence-Transformers |
+| Framework | **LangChain** |
+| Web Search | DuckDuckGo (`ddgs`) |
+| Interface | **Streamlit** |
 
 ---
 
+## ⚙️ How It Works
 
-
-\## ▶️ Running the Application
-
-
-
-```bash
-
-pip install -r requirements.txt
-
-streamlit run app.py
-
-
-
+```text
+User Query
+   ↓
+Time-Sensitivity Check
+   ├── Yes → 🌐 Web Search
+   └── No  → 📚 FAISS Retrieval
+                ↓
+           Context-Grounded LLM Answer
+                ↓
+        Answer + Source Attribution
